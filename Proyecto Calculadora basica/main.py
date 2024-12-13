@@ -3,6 +3,7 @@ from modelo.modelo import Database
 from vista.vista import Vista
 from controlador.controlador import Controlador
 
+
 def main():
     # Configurar la conexión con MySQL
     modelo = Database(host="localhost", user="root", password="")

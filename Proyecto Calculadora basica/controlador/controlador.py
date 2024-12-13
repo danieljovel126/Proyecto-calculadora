@@ -21,12 +21,12 @@ class Controlador:
             self.view.mostrar_resultado(resultado)
         except Exception as e:
             self.view.mostrar_mensaje(f"Error al realizar la operación: {e}")
-
+        #mostar el historial del programa
 
     def mostrar_historial(self):
         historial = self.model.obtener_historial()
         self.view.mostrar_historial(historial)
-
+        #ejecutar el programa
     def ejecutar(self):
         while True:
             opcion = self.view.mostrar_menu()
@@ -35,7 +35,7 @@ class Controlador:
             elif opcion == "2":
                 self.mostrar_historial()
             elif opcion == "3":
-                self.view.mostrar_mensaje("Saliendo del programa...")
+                self.view.mostrar_mensaje("\033[31mSaliendo del programa...\033[0m")
                 break
             else:
                 self.view.mostrar_mensaje("Opción no válida.")
