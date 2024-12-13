@@ -17,9 +17,9 @@ class Vista:
     @staticmethod
     def mostrar_menu():
         print("\n Calculadora EJ :")
-        print("1. Realizar una operación")
-        print("2. Ver historial de operaciones")
-        print("3. Salir")
+        print("\033[032m1. Realizar una operación\033[0m")
+        print("\033[032m2. Ver historial de operaciones\033[0m")
+        print("\033[032m3. Salir\033[0m")
         return input("Seleccione una opción: ")
 
     @staticmethod
