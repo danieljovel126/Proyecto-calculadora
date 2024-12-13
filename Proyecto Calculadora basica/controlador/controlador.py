@@ -40,8 +40,9 @@ class Controlador:
             elif opcion == "2":
                 self.mostrar_historial()
             elif opcion == "3":
-                self.view.mostrar_mensaje("Saliendo del programa...")
+                self.view.mostrar_mensaje("\033[031mSaliendo del programa...\033[0m")
                 break
             else:
                 self.view.mostrar_mensaje("Opción no válida.")
+                
 
