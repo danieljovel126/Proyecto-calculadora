@@ -1,7 +1,7 @@
 class Vista:
     @staticmethod
     def pedir_operacion():
-        return input("Ingrese la operación (por ejemplo, 2 + 2): ")
+        return input("Ingrese la operación (por ejemplo, 2 + 2) y asi con las demaas operaciones: ")
 
     @staticmethod
     def mostrar_resultado(resultado):
@@ -16,7 +16,7 @@ class Vista:
 
     @staticmethod
     def mostrar_menu():
-        print("\nMenu:")
+        print("\n Calculadora EJ :")
         print("1. Realizar una operación")
         print("2. Ver historial de operaciones")
         print("3. Salir")

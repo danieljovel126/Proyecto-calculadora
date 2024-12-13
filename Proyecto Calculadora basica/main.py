@@ -1,10 +1,10 @@
-# modulo principal
+"""modulo principal ejecuta las funciones """
 from modelo.modelo import Database
 from vista.vista import Vista
 from controlador.controlador import Controlador
 
 def main():
-    # Configurar la conexión con MySQL
+    """Configurar de la conexión con MySQL"""
     modelo = Database(host="localhost", user="root", password="")
     modelo.crear_tablas()  # Cambiado a "crear_tablas"
 

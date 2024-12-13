@@ -1,5 +1,6 @@
+"""codigo principal de controlador"""
 class Controlador:
-    """
+    """"
     Clase Controlador que conecta el modelo y la vista,
     y gestiona la lógica de las operaciones.
     """
@@ -16,18 +17,28 @@ class Controlador:
         """
         try:
             operacion = self.view.pedir_operacion()
-            resultado = eval(operacion)  # ¡No recomendado para producción!
+            resultado = self.evaluar_operacion(operacion)  
             self.model.guardar_operacion(operacion, resultado)
             self.view.mostrar_resultado(resultado)
-        except Exception as e:
+        except (ValueError, TypeError) as e:
             self.view.mostrar_mensaje(f"Error al realizar la operación: {e}")
+
+    def evaluar_operacion(self, operacion):
+        """"Evalúa una operación matemática de forma segura"""
+        try:
+            return eval(operacion)
+        except (ValueError, TypeError) as e:
+            raise e
+
 
 
     def mostrar_historial(self):
+        """ mueestra el historila de las operaciones"""
         historial = self.model.obtener_historial()
         self.view.mostrar_historial(historial)
 
     def ejecutar(self):
+        """" ejecuta el ciclo principal de una aplicacion"""
         while True:
             opcion = self.view.mostrar_menu()
             if opcion == "1":
